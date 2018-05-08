@@ -10,9 +10,9 @@
 }
 
 body {
-	background-image: url(flecken.jpg);
+	background: url(flecken.jpg) no-repeat;
 	background-size: cover;
-	position: relative;
+	background-position: center;
 	
 }
 
@@ -21,13 +21,20 @@ body {
 
 
 /* Bildanimation */
+
+#logo-wrapper{
+	width: 250px;
+	height: 100vh;
+	margin: 0 auto;
+}
+
 img {
 	width: 250px;
-	position: fixed;
-	left: calc(50% - 125px);
-	top:  calc(50vh - 125px);
+	margin-top: calc(50vh - 125px);
 	cursor: pointer;
 }
+
+img:hover {}
 
 .invisible {
 	animation: disappear 1s linear;
@@ -42,26 +49,62 @@ img {
 /* Textanimation */
 #text  {
 	width: 250px;
-	height: 60px;
+	height: 250px;
 	position: fixed;
 	left: calc(50% - 125px);
-	top:  calc(50vh - 30px);
+	top:  calc(50vh - 125px);
 	visibility: hidden;
 	text-align: center;
 	font-family: 'Special Elite', cursive;
-	color: #fff;
+	color: #000;
+	line-height: 1.5;
+	animation: opacity-change 4s linear;
+	animation-fill-mode: forwards;
 }
 
 .visible {
 	visibility: visible !important;
 }
 
-.visible p, .visible a {
-	animation: colorchange2 1s linear;
-	animation-fill-mode: forwards;
+@keyframes opacity-change {
+	0% { opacity: 0}
+	50% {opacity: 0}
+	100% { opacity: 1.0 }
 }
 
-@keyframes colorchange2 {
-	0% { color: rgba(0,0,0,0)}
-	100% { color: rgba(0,0,0,1) }
+/* Form */
+
+form {
+	width: 175px;
+	margin: 0 auto;
+
+}
+
+form input,form textarea {
+	width: 91%;
+	font-family: 'Special Elite';
+	background-color: rgba(0,0,0,0);
+	border: dotted 1px #000;
+	text-align: center;
+	color: #000;
+	font-size: 12px;
+	padding: 5px 4%;
+	margin-top: 15px;
+}
+
+form textarea {
+	margin-top: 5px;
+	overflow-y: hidden;
+	resize: none;
+}
+
+form input[type=submit] {
+	width: 100%;
+	cursor: pointer;
+	margin-top: 5px;
+
+}
+
+form input[type=submit]:hover {
+	border: solid 1px;
 }

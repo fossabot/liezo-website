@@ -8,11 +8,18 @@
 </head>
 
 <body id="body">
-	<img id="logo" src="logo.png" onclick="this.classList.add('invisible'),document.querySelector('#body').classList.add('white'),document.querySelector('#text').classList.toggle('visible')">
+	<div id="logo-wrapper">
+		<img id="logo" src="logo.png" onclick="this.classList.add('invisible'),document.querySelector('#text').classList.toggle('visible')" alt="liezo-logo">
+	</div>
 	<div id="text">
 		<p>liaison auf der alm<br>
 		   16.-19.august 2018</p>
-		<a href="https://info@liezo.de">info@liezo.de</a>
+		<form id="kontaktformular" name="kontaktformular" action="http://www.formular-chef.de/fc.cgi" method="post">
+			<input type="hidden" name="empfaenger" value="julian.mueller.kembergX§Xweb.de">
+			<input type="email" name="email" placeholder="emil.eichel@hdl.af" required>
+			<textarea name="nachricht" rows="6" cols="10" placeholder="dein bier" required></textarea>
+			<input type="submit" value="abschicken" formtarget="_blank">
+		</form>
 	</div>
 </body>
 </html>
