@@ -1,30 +1,32 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>save the date</title>
+	<meta charset="utf-8">
+	<title>save the date</title>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/cons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-<link rel="manifest" href="icons/site.webmanifest">
-<link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="icons/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="icons/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="/cons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+	<link rel="manifest" href="icons/site.webmanifest">
+	<link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="icons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
 
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 </head>
 
 <body id="body">
 	<div id="logo-wrapper">
-		<img id="logo" src="logo.png" onclick="this.classList.add('invisible'),document.querySelector('#text').classList.toggle('visible')" alt="liezo-logo">
+		<img id="logo" src="logo.png" onclick="this.classList.add('invisible'),document.querySelector('#text').classList.toggle('visible')"
+		 alt="liezo-logo">
 	</div>
 	<div id="text">
-		<p>liaison auf der alm<br>
-		   16.-19.august 2018</p>
+		<p>liaison auf der alm
+			<br> 16.-19.august 2018</p>
 		<form id="kontaktformular" name="kontaktformular" action="http://www.formular-chef.de/fc.cgi" method="post">
 			<input type="hidden" name="empfaenger" value="julian.mueller.kembergX§Xweb.de">
 			<input type="email" name="email" placeholder="emil.eichel@hdl.af" required>
@@ -32,5 +34,35 @@
 			<input type="submit" value="abschicken" formtarget="_blank">
 		</form>
 	</div>
+
+	<div id="mute"></div>
+
+	<audio id="music" autoplay loop>
+		<source src="background.mp3">
+	</audio>
+
+	<script>
+		let music = document.getElementById("music");
+		let mute = document.getElementById('mute');
+
+		music.volume = 0.4;
+
+		let muted = false;
+		mute.addEventListener('click', function (e) {
+			if (!muted) {
+
+				music.volume = 0;
+				mute.classList.add('mute-on');
+			} else {
+
+				music.volume = 0.4;
+				mute.classList.remove('mute-on');
+			}
+			muted = !muted;
+		});
+
+
+	</script>
 </body>
+
 </html>

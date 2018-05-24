@@ -108,3 +108,19 @@ form input[type=submit] {
 form input[type=submit]:hover {
 	border: solid 1px;
 }
+
+/* Mute button */
+#mute {
+	position: absolute;
+	right: 10pt;
+	top: 10pt;
+	width: 40pt;
+	height: 40pt;
+	background: url("volume-x.svg") white no-repeat center center;
+	border-radius: 100pt;
+	cursor: pointer;
+}
+
+.mute-on {
+	background-image: url("volume.svg") !important
+}
