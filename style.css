@@ -98,6 +98,21 @@ form textarea {
 	resize: none;
 }
 
+form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: black;
+	opacity: 0.8; /* Firefox */
+}
+
+form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: black;
+	opacity: 0.8; /* Firefox */
+}
+
+form textarea::-ms-input-placeholder { /* Microsoft Edge */
+	color: black;
+	opacity: 0.8; /* Firefox */
+}
+
 form input[type=submit] {
 	width: 100%;
 	cursor: pointer;
@@ -107,6 +122,21 @@ form input[type=submit] {
 
 form input[type=submit]:hover {
 	border: solid 1px;
+}
+
+form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: black;
+	opacity: 0.8; /* Firefox */
+}
+
+form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: black;
+	opacity: 0.8; /* Firefox */
+}
+
+form input::-ms-input-placeholder { /* Microsoft Edge */
+	color: black;
+	opacity: 0.8; /* Firefox */
 }
 
 /* Mute button */
